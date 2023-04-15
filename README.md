@@ -1,5 +1,5 @@
 # Yolov5-SKU110K
-Object Detection Model using Yolov5 by Ultralytics on SKU110K dataset and Post Quantization.
+Object Detection in Dense Environments using Yolov5 by Ultralytics on SKU110K dataset and Post Quantization.
 
 ### The Yolov5 model by Ultralytics is an efficient object detection model that can be quantized and deployed on edge devices for real-time detection in dense environments.
 Some of the key features of Yolov5 are:
@@ -9,6 +9,13 @@ Some of the key features of Yolov5 are:
 - It has an active development community which provides frequent updates.
 - It has PyTorch, TensorFlow and ONNX versions which provides flexibility in the choice of framework.
 - It can be quantized to INT8 precision with minimal loss in accuracy making it suitable for edge devices with low memory and compute.
+
+### SKU-110K Dataset for Object Detection
+The SKU-110K dataset is a large-scale dataset for object detection tasks. The dataset was released by SenseTime, a leading AI company, and is designed to enable researchers and developers to train and test object detection models.
+Some of the key features of the dataset are:
+- It has 110,000 images with 1,000,000 objects.
+- It contains a large number of images with high-quality annotations, which makes it ideal for training deep learning models.
+- It has a large number of objects per image, which makes it suitable for training models for dense object detection scenarios.
 
 ## Training and Evaluation
 The training was done on SKU110K dataset for a maximum of 50 epochs but during the training we could see the metrics saturate around 30 epochs when the mAP50 was almost 0.6 on the training set.
