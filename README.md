@@ -52,3 +52,16 @@ Some benefits of quantizing yolov5 model are:-
 - Improved Computational Efficiency: Quantized YOLOv5 models can be executed more efficiently on mobile devices, due to the reduced precision of the weights. This can lead to faster inference times and lower latency, which is particularly important for real-time applications such as object detection in mobile cameras.
 - Reduced Model Size: Quantization can also help to reduce the size of the YOLOv5 model, making it easier to deploy and distribute to mobile devices. This can also help to reduce the network bandwidth requirements and storage costs associated with the deployment of the model.
 - Compatibility with Mobile Hardware: Quantized YOLOv5 models can be optimized for mobile hardware architectures. This can further improve the performance and efficiency of the model on mobile devices.
+
+## Results
+- We were able to achieve exceptional results with the Yolov5 model on the SKU110K dataset :)
+- But remember the main objective of this project was to quantize the model and deploy it on edge devices for real-time detection in dense environments.
+- The model was quantized into various formats and different precisions and the results were compared.
+
+| Index | Model                         | Size (mb) | Precision | Recall | mAP50 | F1 Score |
+| ------| ----------------------------- | --------- | --------- | ------ | ----- | -------- |
+| 1     | Pytorch (.pt)                 | 164       | 0.930     | 0.868  | 0.922 | 0.8979   |
+| 2     | Tensorflow (.pb)              | 329       | 0.925     | 0.868  | 0.919 | 0.8955   |
+| 3     | Tflite Float 32 (.tflite)     | 328       | 0.925     | 0.868  | 0.919 | 0.8955   |
+| 4     | Tflite Float 16 (.tflite)     | 164       | 0.925     | 0.868  | 0.919 | 0.8955   |
+| 5     | Tflite Int 8 (.tflite)        | 83        | 0.917     | 0.865  | 0.915 | 0.8902   |
