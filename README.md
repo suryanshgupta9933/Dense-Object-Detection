@@ -1,7 +1,7 @@
 # Yolov5-SKU110K
 Object Detection Model using Yolov5 by Ultralytics on SKU110K dataset and Post Quantization.
 
-## The Yolov5 model by Ultralytics is an efficient object detection model that can be quantized and deployed on edge devices for real-time detection in dense environments.
+### The Yolov5 model by Ultralytics is an efficient object detection model that can be quantized and deployed on edge devices for real-time detection in dense environments.
 Some of the key features of Yolov5 are:
 - It is fast (30+ FPS) and accurate.
 - It has small model size (from 3.2MB to 253MB) which makes it suitable for deployment on edge devices.
@@ -48,6 +48,7 @@ Some benefits of quantizing yolov5 model are:-
 | 3     | Tflite Float 32 (.tflite)     | 328       | 0.925     | 0.868  | 0.919 | 0.8955   |
 | 4     | Tflite Float 16 (.tflite)     | 164       | 0.925     | 0.868  | 0.919 | 0.8955   |
 | 5     | Tflite Int 8 (.tflite)        | 83        | 0.917     | 0.865  | 0.915 | 0.8902   |
+
 
 > **_NOTE:_** Individual results and plots for each model can be found in the repository in test folder.
 
