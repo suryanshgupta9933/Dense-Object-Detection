@@ -21,10 +21,10 @@ The image size was set to 640x640 and the batch size was set to 2 due to the dat
 The training was done on 2 x 3060 Ti Nvidia GPUs each consisting of 8gb vram for approximately 3 hours.
 
 ### Graphs for training and validation for various metrics.
-<img src="/assets/results.png" width="450"/>
+![Graphs](/assets/graphs.png){:height="50%" width="50%"}
 
 ### Confusion Matrix for the validation set.
-<img src="/assets/confusion_matrix.png" width="450"/>
+![Confusion Matrix](/assets/confusion_matrix.png){:height="50%" width="50%"}
 
 ## Quantization and its benefits
 Quantization is a technique to reduce the size of the model by reducing the precision of the weights and activations.
