@@ -100,6 +100,9 @@ The model weights are not being shared but you can mimic the whole pipeline usin
 - Customer Behavior Analysis: Retail stores can use object detection models to analyze customer behavior and preferences. By analyzing product images and tracking customer movements, the YOLOv5 model can identify popular product categories and display placements, and provide insights into customer shopping behavior.
 - Product Recommendation: Object detection models can also be used to provide personalized product recommendations to customers. By analyzing customer images or product images captured in real-time, the YOLOv5 model can identify the products that a customer is interested in and recommend complementary or similar products.
 
+Here is a video sample in a random supermart.
+https://user-images.githubusercontent.com/75354950/232225553-ffd9a9a5-7ebe-48e8-8f2e-0a240ade915a.mp4
+
 ## To Do
 - Expanding the dataset to include more categories and brands.
 - Convert the weights to ONNX format and deploy using ONNX Runtime.
