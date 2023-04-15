@@ -63,13 +63,13 @@ Some benefits of quantizing yolov5 model are:-
 - As we can see the models in the middle perform very similar to one another.
 - Here are some inference results for various models.
 
-### Pytorch FP16(.pt)            |  Tflite FP32(.tflite)
+### Pytorch FP16 | Tflite FP32
 <p float="left">
   <img src="/assets/pt_img.png" width="412" />
   <img src="/assets/tflite_fp32.png" width="412" /> 
 </p>
 
-### Pytorch FP16(.pt)            |  Tflite FP16(.tflite)
+### Tflite FP16 | Tflite INT8
 <p float="left">
   <img src="/assets/tflite_fp16.png" width="412" />
   <img src="/assets/tflite_int8.png" width="412" />
