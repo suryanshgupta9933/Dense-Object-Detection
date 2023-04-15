@@ -28,10 +28,10 @@ The image size was set to 640x640 and the batch size was set to 2 due to the dat
 The training was done on 2 x 3060 Ti Nvidia GPUs each consisting of 8gb vram for approximately 3 hours.
 
 ### Graphs for training and validation for various metrics.
-<img src="/assets/results.png" width="600" />
+<img src="/assets/results.png" width="750" />
 
 ### Confusion Matrix for the validation set.
-<img src="/assets/confusion_matrix.png" width="600" />
+<img src="/assets/confusion_matrix.png" width="750" />
 
 ## Quantization and its benefits
 Quantization is a technique to reduce the size of the model by reducing the precision of the weights and activations.
@@ -99,3 +99,8 @@ The model weights are not being shared but you can mimic the whole pipeline usin
 - Loss Prevention: Object detection models can also be used to identify and prevent theft or fraud in retail stores. By analyzing surveillance camera footage or product images, the YOLOv5 model can detect and track suspicious behavior, such as shoplifting or product tampering, and alert store security personnel.
 - Customer Behavior Analysis: Retail stores can use object detection models to analyze customer behavior and preferences. By analyzing product images and tracking customer movements, the YOLOv5 model can identify popular product categories and display placements, and provide insights into customer shopping behavior.
 - Product Recommendation: Object detection models can also be used to provide personalized product recommendations to customers. By analyzing customer images or product images captured in real-time, the YOLOv5 model can identify the products that a customer is interested in and recommend complementary or similar products.
+
+## To Do
+- Expanding the dataset to include more categories and brands.
+- Convert the weights to ONNX format and deploy using ONNX Runtime.
+- Converting weights to 'ggml' which is a tensor library written in C and supports even smaller 4-bit integer quantization and optimized for various platforms.
