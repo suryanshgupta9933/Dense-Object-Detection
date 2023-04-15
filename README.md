@@ -65,3 +65,8 @@ Some benefits of quantizing yolov5 model are:-
 | 3     | Tflite Float 32 (.tflite)     | 328       | 0.925     | 0.868  | 0.919 | 0.8955   |
 | 4     | Tflite Float 16 (.tflite)     | 164       | 0.925     | 0.868  | 0.919 | 0.8955   |
 | 5     | Tflite Int 8 (.tflite)        | 83        | 0.917     | 0.865  | 0.915 | 0.8902   |
+
+Theoritically the model should have been quantized to INT8 precision with minimal loss in accuracy and we could see that the model was quantized to INT8 precision with a loss in accuracy of 0.007 which is very minimal and works in our favor.
+
+But, when these models were inferenced and compared to one another the int 8 model performs the best in terms of accuracy.
+Amazing right? :)
