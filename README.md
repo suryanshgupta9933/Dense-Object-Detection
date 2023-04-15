@@ -19,7 +19,10 @@ The training was done on SKU110K dataset for a maximum of 50 epochs but during t
 The image size was set to 640x640 and the batch size was set to 2 due to the data being large and avoiding GPUs running out of memory.
 The training was done on 2 x 3060 Ti Nvidia GPUs each consisting of 8gb vram for approximately 3 hours.
 
-<img src="/assets/train_batch0.jpg" width="256"/>  <img src="/assets/val_batch0_labels.jpg" width="256"/>
+Training Batch
+<img src="/assets/train_batch0.jpg" width="350"/>
+Validation Batch
+<img src="/assets/val_batch0_labels.jpg" width="350"/>
 
 ## Advantages
 - Large and Diverse: The dataset contains a large and diverse set of product images, covering a wide range of categories, brands, and styles. This diversity can help the YOLOv5 model learn to recognize a variety of products and adapt to different retail store settings.
