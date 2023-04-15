@@ -21,10 +21,10 @@ The image size was set to 640x640 and the batch size was set to 2 due to the dat
 The training was done on 2 x 3060 Ti Nvidia GPUs each consisting of 8gb vram for approximately 3 hours.
 
 ### Graphs for training and validation for various metrics.
-![Graphs](/assets/results.png){:height="300px" width="300px"}
+![Graphs](/assets/results.png)
 
 ### Confusion Matrix for the validation set.
-![Confusion Matrix](/assets/confusion_matrix.png){:height="300px" width="300px"}
+![Confusion Matrix](/assets/confusion_matrix.png)
 
 ## Quantization and its benefits
 Quantization is a technique to reduce the size of the model by reducing the precision of the weights and activations.
@@ -61,7 +61,7 @@ Amazing right? :)
 - Here are some inference results for various models.
 
     Pytorch FP16 (.pt) model                            Tflite FP32 (.tflite) model       
-<img src="/assets/pt_img.png" width="400"/>nbsp;nbsp;nbsp;<img src="/assets/tflite_fp32.png" width="400"/>
+<img src="/assets/pt_img.png" width="400"/>&nbsp;&nbsp;&nbsp;<img src="/assets/tflite_fp32.png" width="400"/>
 
 ## Replicating the Work
 The model weights are not being shared but you can mimic the whole pipeline using the notebook provided in the repository to obtain them.
