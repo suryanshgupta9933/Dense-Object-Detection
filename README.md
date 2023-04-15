@@ -60,10 +60,18 @@ Amazing right? :)
 - As we can see the models in the middle perform very similar to one another.
 - Here are some inference results for various models.
 
+
 <p float="left">
-  <img src="/assets/pt_img.png" width="400" />
-  <img src="/assets/tflite_fp32.png" width="400" /> 
+  <img src="/assets/pt_img.png" width="412" />
+  <img src="/assets/tflite_fp32.png" width="412" /> 
 </p>
+                    Pytorch (.pt)                   Tflite Float 32 (.tflite)
+
+<p float="left">
+  <img src="/assets/tflite_fp16.png" width="412" />
+  <img src="/assets/tflite_int8.png" width="412" />
+</p>
+                    Tflite Float 16 (.tflite)                   Tflite Int 8 (.tflite)
 
 ## Replicating the Work
 The model weights are not being shared but you can mimic the whole pipeline using the notebook provided in the repository to obtain them.
