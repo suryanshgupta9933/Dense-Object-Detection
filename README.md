@@ -51,26 +51,26 @@ Some benefits of quantizing yolov5 model are:-
 
 > **_NOTE:_** Individual results and plots for each model can be found in the repository in test folder.
 
-Theoritically the model should have been quantized to INT8 precision with minimal loss in accuracy and we could see that the model was quantized to INT8 precision with a loss in accuracy of 0.007 which is very minimal and works in our favor.
-
-But, when these models were inferenced and compared to one another the int 8 model performs the best in terms of accuracy.
-Amazing right? :)
-
 ## Inference
 - As we can see the models in the middle perform very similar to one another.
 - Here are some inference results for various models.
 
-### Pytorch FP16(.pt)            |  tflite FP32(.tflite)
+### Pytorch FP16(.pt)            |  Tflite FP32(.tflite)
 <p float="left">
   <img src="/assets/pt_img.png" width="412" />
   <img src="/assets/tflite_fp32.png" width="412" /> 
 </p>
 
-### Pytorch FP16(.pt)            |  tflite FP16(.tflite)
+### Pytorch FP16(.pt)            |  Tflite FP16(.tflite)
 <p float="left">
   <img src="/assets/tflite_fp16.png" width="412" />
   <img src="/assets/tflite_int8.png" width="412" />
 </p>
+
+Theoritically the model should have been quantized to INT8 precision with minimal loss in accuracy and we could see that the model was quantized to INT8 precision with a loss in accuracy of 0.007 which is very minimal and works in our favor.
+
+But, when these models were inferenced and compared to one another the int 8 model performs the best in terms of accuracy.
+Amazing right? :)
 
 ## Replicating the Work
 The model weights are not being shared but you can mimic the whole pipeline using the notebook provided in the repository to obtain them.
