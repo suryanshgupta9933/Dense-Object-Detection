@@ -21,14 +21,14 @@ The image size was set to 640x640 and the batch size was set to 2 due to the dat
 The training was done on 2 x 3060 Ti Nvidia GPUs each consisting of 8gb vram for approximately 3 hours.
 
 ### Graphs for training and validation for various metrics.
-<img src="/assets/train_batch0.jpg" width="450"/>
+<img src="/assets/results.png" width="450"/>
 
 ### Confusion Matrix for the validation set.
-<img src="/assets/val_batch0_labels.jpg" width="450"/>
+<img src="/assets/confusion_matrix.png" width="450"/>
 
 ## Quantization and its benefits
-- Quantization is a technique to reduce the size of the model by reducing the precision of the weights and activations.
-- Quantization involves converting the weights of the model from 32-bit floating-point precision to lower-precision formats, such as 8-bit integers, while minimizing the loss of accuracy.
+Quantization is a technique to reduce the size of the model by reducing the precision of the weights and activations.
+Quantization involves converting the weights of the model from 32-bit floating-point precision to lower-precision formats, such as 8-bit integers, while minimizing the loss of accuracy.
 
 Some benefits of quantizing yolov5 model are:-
 - Reduced Memory Requirements: Quantizing YOLOv5 can significantly reduce the memory requirements of the model, making it more suitable for deployment on mobile devices with limited memory resources. This can also help to reduce the power consumption and increase the battery life of the device.
@@ -37,7 +37,7 @@ Some benefits of quantizing yolov5 model are:-
 - Compatibility with Mobile Hardware: Quantized YOLOv5 models can be optimized for mobile hardware architectures. This can further improve the performance and efficiency of the model on mobile devices.
 
 ## Results
-- We were able to achieve exceptional results with the Yolov5 model on the SKU110K dataset :)
+- We were able to achieve exceptional results with the Yolov5 model on the SKU110K dataset
 - But remember the main objective of this project was to quantize the model and deploy it on edge devices for real-time detection in dense environments.
 - The model was quantized into various formats and different precisions and the results were compared to one another on test set.
 
@@ -49,7 +49,7 @@ Some benefits of quantizing yolov5 model are:-
 | 4     | Tflite Float 16 (.tflite)     | 164       | 0.925     | 0.868  | 0.919 | 0.8955   |
 | 5     | Tflite Int 8 (.tflite)        | 83        | 0.917     | 0.865  | 0.915 | 0.8902   |
 
-### Individual results and plots for each model can be found in the repository in test folder.
+> **_NOTE:_** Individual results and plots for each model can be found in the repository in test folder.
 
 Theoritically the model should have been quantized to INT8 precision with minimal loss in accuracy and we could see that the model was quantized to INT8 precision with a loss in accuracy of 0.007 which is very minimal and works in our favor.
 
@@ -60,8 +60,8 @@ Amazing right? :)
 - As we can see the models in the middle perform very similar to one another.
 - Here are some inference results for various models.
 
-        Pytorch FP16 (.pt) model                       Tflite FP32 (.tflite) model       
-<img src="/assets/pt_img.png" width="400"/><img src="/assets/tflite_fp32.png" width="400"/>
+    Pytorch FP16 (.pt) model                            Tflite FP32 (.tflite) model       
+<img src="/assets/pt_img.png" width="400"/>nbsp;nbsp;nbsp;<img src="/assets/tflite_fp32.png" width="400"/>
 
 ## Replicating the Work
 The model weights are not being shared but you can mimic the whole pipeline using the notebook provided in the repository to obtain them.
