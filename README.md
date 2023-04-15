@@ -10,7 +10,7 @@ Some of the key features of Yolov5 are:
 - It has PyTorch, TensorFlow and ONNX versions which provides flexibility in the choice of framework.
 - It can be quantized to INT8 precision with minimal loss in accuracy making it suitable for edge devices with low memory and compute.
 
-## Training Pipeline
+## Training and Evaluation
 The training was done on SKU110K dataset for a maximum of 50 epochs but during the training we could see the metrics saturate around 30 epochs when the mAP50 was almost 0.6 on the training set.
 - The training set consisted of 8185 images.
 - The validation set consisted of 584 images.
@@ -18,6 +18,7 @@ The training was done on SKU110K dataset for a maximum of 50 epochs but during t
 
 The image size was set to 640x640 and the batch size was set to 2 due to the data being large and avoiding GPUs running out of memory.
 The training was done on 2 x 3060 Ti Nvidia GPUs each consisting of 8gb vram for approximately 3 hours.
+![Training Batch](/assests/train_batch0.jpg)    ![Validation Batch](/assests/val_batch0_labels.jpg)
 
 ## Advantages
 - Large and Diverse: The dataset contains a large and diverse set of product images, covering a wide range of categories, brands, and styles. This diversity can help the YOLOv5 model learn to recognize a variety of products and adapt to different retail store settings.
