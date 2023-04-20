@@ -16,7 +16,7 @@ from yolov5.utils.torch_utils import select_device
 model_path = r"D:\AIML\Yolov5-SKU110K\yolov5\runs\train\exp\weights\best.pt"
 
 # Load the model
-device = select_device('cpu')
+device = select_device('0' if torch.cuda.is_available() else 'cpu')
 model = attempt_load(model_path, device=device)
 
 # Define a function to draw bounding boxes on the image
