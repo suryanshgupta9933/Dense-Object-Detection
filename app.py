@@ -39,7 +39,8 @@ def draw_bounding_boxes(image, boxes, confidences, class_ids):
 
 # Define the Streamlit app
 def main():
-    st.title("Yolov5-SKU110K")
+    st.set_page_config(page_title="Yolov5-SKU110", page_icon="💡")
+    st.title("🔪Yolov5-SKU110K")
     st.write("Object Detection in Dense Environments using Yolov5 on SKU110K dataset")
     option = st.radio("", ("Image", "Webcam"))
 
