@@ -80,9 +80,6 @@ Theoritically the model should have been quantized to INT8 precision with minima
 But, when these models were inferenced and compared to one another the int 8 model performs the best in terms of accuracy.
 Amazing right? :)
 
-## Replicating the Work
-The model weights are not being shared but you can mimic the whole pipeline using the notebook provided in the repository to obtain them.
-
 ## Streamlit App
 - The streamlit app is deployed on streamlit cloud and can be found [here](https://smackiaa-yolov5-sku110k-app-9tdv8g.streamlit.app/)
 - The app is a simple web app that can be used to upload images and get predictions from the model.
