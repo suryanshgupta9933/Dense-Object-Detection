@@ -88,7 +88,6 @@ def main():
             # Display the result
             st.image(image, caption="Detected Objects", use_column_width=True)
             # clear memory and cache
-            st.caching.clear_cache()
             torch.cuda.empty_cache()
 
     elif option == "Webcam":
@@ -148,7 +147,6 @@ def main():
         video_capture.release()
         cv2.destroyAllWindows()
         # clear memory and cache
-        st.caching.clear_cache()
         torch.cuda.empty_cache()
 
 if __name__ == "__main__":
