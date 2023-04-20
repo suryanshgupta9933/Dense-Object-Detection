@@ -1,0 +1,1 @@
+sudo apt-get dependencies install libglib2.0-dev
