@@ -13,7 +13,7 @@ from yolov5.utils.general import non_max_suppression
 from yolov5.utils.torch_utils import select_device
 
 # Define the path to your saved YOLOv5 model
-model_path = "/weights/best.pt"
+model_path = "weights/best.pt"
 
 # Load the model
 device = select_device('0' if torch.cuda.is_available() else 'cpu')
@@ -59,17 +59,14 @@ def main():
             img = torch.from_numpy(img).to(device)
             img = img.float() / 255.0
             img = img.unsqueeze(0)
-            print(img.shape)
 
             # Run the YOLOv5 model on the image
             pred = model(img)[0] 
-            print(pred)
             pred = non_max_suppression(pred, conf_thres=0.25, iou_thres=0.45)
             # convert to numpy
             pred = [x.detach().cpu().numpy() for x in pred]
             # convert to int
             pred = [x.astype(int) for x in pred]
-            print(pred)
             # Post-process the output and draw bounding boxes on the image
             boxes = []
             confidences = []    
@@ -82,9 +79,6 @@ def main():
                         boxes.append(xyxy)
                         confidences.append(conf.item())
                         class_ids.append(int(cls.item()))
-            print("boxes:", boxes)
-            print("confidences:", confidences)
-            print("class_ids:", class_ids)
             image = np.array(image)
             image = draw_bounding_boxes(image, boxes, confidences, class_ids)
             image = Image.fromarray(image)
@@ -118,7 +112,6 @@ def main():
 
             # Run the YOLOv5 model on the image
             pred = model(img)[0] 
-            print(pred)
             pred = non_max_suppression(pred, conf_thres=0.25, iou_thres=0.45)
              # convert to numpy
             pred = [x.detach().cpu().numpy() for x in pred]
