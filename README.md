@@ -83,6 +83,11 @@ Amazing right? :)
 ## Replicating the Work
 The model weights are not being shared but you can mimic the whole pipeline using the notebook provided in the repository to obtain them.
 
+## Streamlit App
+- The streamlit app is deployed on streamlit cloud and can be found [here](https://smackiaa-yolov5-sku110k-app-9tdv8g.streamlit.app/)
+- The app is a simple web app that can be used to upload images and get predictions from the model.
+- The app also supports webcam and can be used to get predictions in real-time from the webcam.
+
 ## Advantages of using SKU110K dataset on Yolov5 model
 - Large and Diverse: The dataset contains a large and diverse set of product images, covering a wide range of categories, brands, and styles. This diversity can help the YOLOv5 model learn to recognize a variety of products and adapt to different retail store settings.
 - Realistic Scenarios: The images in the dataset are captured in real-world retail store settings, with varying illumination, background clutter, and occlusion. This can help the YOLOv5 model learn to recognize products in realistic scenarios, which can be particularly useful in retail store settings.
