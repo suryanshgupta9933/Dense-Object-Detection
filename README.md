@@ -83,7 +83,6 @@ Amazing right? :)
 ## Streamlit App
 - The streamlit app is deployed on streamlit cloud and can be found [here](https://smackiaa-yolov5-sku110k-app-9tdv8g.streamlit.app/)
 - The app is a simple web app that can be used to upload images and get predictions from the model.
-- The app also supports webcam and can be used to get predictions in real-time from the webcam.
 
 ## Advantages of using SKU110K dataset on Yolov5 model
 - Large and Diverse: The dataset contains a large and diverse set of product images, covering a wide range of categories, brands, and styles. This diversity can help the YOLOv5 model learn to recognize a variety of products and adapt to different retail store settings.
