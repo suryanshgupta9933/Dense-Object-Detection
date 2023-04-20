@@ -13,7 +13,7 @@ from yolov5.utils.general import non_max_suppression
 from yolov5.utils.torch_utils import select_device
 
 # Define the path to your saved YOLOv5 model
-model_path = r"weights\best.pt"
+model_path = "/weights/best.pt"
 
 # Load the model
 device = select_device('0' if torch.cuda.is_available() else 'cpu')
