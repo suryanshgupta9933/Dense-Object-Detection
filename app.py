@@ -15,9 +15,8 @@ from yolov5.utils.torch_utils import select_device
 # Define the path to your saved YOLOv5 model
 model_path = "weights/best.pt"
 
-# Load the model
+# Set the device to GPU if available
 device = select_device('0' if torch.cuda.is_available() else 'cpu')
-model = attempt_load(model_path, device=device)
 
 # Define a function to draw bounding boxes on the image
 def draw_bounding_boxes(image, boxes, confidences, class_ids):
@@ -39,115 +38,58 @@ def draw_bounding_boxes(image, boxes, confidences, class_ids):
 
 # Define the Streamlit app
 def main():
+    # Load the model
+    model = attempt_load(model_path, device=device)
     st.set_page_config(page_title="Yolov5-SKU110", page_icon="💡")
     st.title("🔪Yolov5-SKU110K")
     st.write("Object Detection in Dense Environments using Yolov5 on SKU110K dataset")
-    option = st.radio("", ("Image", "Webcam"))
+    conf_thres = st.slider("Confidence Threshold", 0.0, 1.0, 0.25, 0.05)
+    iou_thres = st.slider("IOU Threshold", 0.0, 1.0, 0.45, 0.05)
+    # Allow the user to upload an image
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
-    if option == "Image":
-        # Allow the user to upload an image
-        uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    if uploaded_file is not None:
+        # Preprocess the image
+        image = Image.open(uploaded_file)
+        shape = image.size
+        image = image.resize((640, 640))
+        img = np.array(image)
+        img = img[:, :, ::-1].transpose(2, 0, 1)
+        img = np.ascontiguousarray(img)
+        img = torch.from_numpy(img).to(device)
+        img = img.float() / 255.0
+        img = img.unsqueeze(0)
 
-        if uploaded_file is not None:
-            # Preprocess the image
-            image = Image.open(uploaded_file)
-            shape = image.size
-            image = image.resize((640, 640))
-            img = np.array(image)
-            img = img[:, :, ::-1].transpose(2, 0, 1)
-            img = np.ascontiguousarray(img)
-            img = torch.from_numpy(img).to(device)
-            img = img.float() / 255.0
-            img = img.unsqueeze(0)
+        # Run the YOLOv5 model on the image
+        pred = model(img)[0] 
+        pred = non_max_suppression(pred, conf_thres=conf_thres, iou_thres=iou_thres)
+        # convert to numpy
+        pred = [x.detach().cpu().numpy() for x in pred]
+        # convert to int
+        pred = [x.astype(int) for x in pred]
+        # Post-process the output and draw bounding boxes on the image
+        boxes = []
+        confidences = []    
+        class_ids = []
+        for det in pred:
+            if det is not None and len(det):
+                # Scale the bounding box coordinates to the original image size
+                det[:, :4] = det[:, :4] / 640 * image.size[0]
+                for *xyxy, conf, cls in det:
+                    boxes.append(xyxy)
+                    confidences.append(conf.item())
+                    class_ids.append(int(cls.item()))
+        image = np.array(image)
+        image = draw_bounding_boxes(image, boxes, confidences, class_ids)
+        image = Image.fromarray(image)
+        # resize back to original size
+        image = image.resize(shape)
 
-            # Run the YOLOv5 model on the image
-            pred = model(img)[0] 
-            pred = non_max_suppression(pred, conf_thres=0.25, iou_thres=0.45)
-            # convert to numpy
-            pred = [x.detach().cpu().numpy() for x in pred]
-            # convert to int
-            pred = [x.astype(int) for x in pred]
-            # Post-process the output and draw bounding boxes on the image
-            boxes = []
-            confidences = []    
-            class_ids = []
-            for det in pred:
-                if det is not None and len(det):
-                    # Scale the bounding box coordinates to the original image size
-                    det[:, :4] = det[:, :4] / 640 * image.size[0]
-                    for *xyxy, conf, cls in det:
-                        boxes.append(xyxy)
-                        confidences.append(conf.item())
-                        class_ids.append(int(cls.item()))
-            image = np.array(image)
-            image = draw_bounding_boxes(image, boxes, confidences, class_ids)
-            image = Image.fromarray(image)
-            # resize back to original size
-            image = image.resize(shape)
-
-            # Display the result
-            st.image(image, caption="Detected Objects", use_column_width=True)
-            # clear memory and cache
-            torch.cuda.empty_cache()
-
-    elif option == "Webcam":
-        # Start the webcam capture
-        video_capture = cv2.VideoCapture(0)
-        stframe = st.empty()
-
-        while True:
-            ret, frame = video_capture.read()
-            if not ret:
-                break
-
-            # Preprocess the image
-            shape = frame.shape
-            frame = cv2.resize(frame, (640, 640))
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            img = np.array(frame)
-            img = img[:, :, ::-1].transpose(2, 0, 1)
-            img = np.ascontiguousarray(img)
-            img = torch.from_numpy(img).to(device)
-            img = img.float() / 255.0
-            img = img.unsqueeze(0)
-            print(img.shape)
-
-            # Run the YOLOv5 model on the image
-            pred = model(img)[0] 
-            pred = non_max_suppression(pred, conf_thres=0.25, iou_thres=0.45)
-             # convert to numpy
-            pred = [x.detach().cpu().numpy() for x in pred]
-
-            # convert to int
-            pred = [x.astype(int) for x in pred]
-
-            # Post-process the output and draw bounding boxes on the image
-            boxes = []
-            confidences = []    
-            class_ids = []
-            for det in pred:
-                if det is not None and len(det):
-                    # Scale the bounding box coordinates to the original image size
-                    det[:, :4] = det[:, :4] / 640 * shape[1]
-                    for *xyxy, conf, cls in det:
-                        boxes.append(xyxy)
-                        confidences.append(conf.item())
-                        class_ids.append(int(cls.item()))
-            print("boxes:", boxes)
-            print("confidences:", confidences)
-            print("class_ids:", class_ids)
-
-            # Draw bounding boxes on the image
-            frame = draw_bounding_boxes(frame, boxes, confidences, class_ids)
-
-            # Display the result
-            stframe.image(frame, caption="Detected Objects", use_column_width=True)
-
-        # Release the webcam and close the window
-        video_capture.release()
-        cv2.destroyAllWindows()
+        # Display the result
+        st.image(image, caption="Detected Objects", use_column_width=True)
         # clear memory and cache
         torch.cuda.empty_cache()
+
 
 if __name__ == "__main__":
     main()
