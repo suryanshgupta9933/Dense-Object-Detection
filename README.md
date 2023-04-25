@@ -81,7 +81,7 @@ But, when these models were inferenced and compared to one another the int 8 mod
 Amazing right? :)
 
 ## Streamlit App
-- The streamlit app is deployed on streamlit cloud and can be found [here](https://smackiaa-yolov5-sku110k-app-9tdv8g.streamlit.app/)
+- The streamlit app is deployed on streamlit cloud and can be found [here](https://smackiaa-yolov5-sku110k-app-iw8gew.streamlit.app/)
 - The app is a simple web app that can be used to upload images and get predictions from the model.
 
 ## Advantages of using SKU110K dataset on Yolov5 model
