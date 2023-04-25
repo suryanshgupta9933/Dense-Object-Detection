@@ -44,7 +44,7 @@ Some benefits of quantizing yolov5 model are:-
 - Compatibility with Mobile Hardware: Quantized YOLOv5 models can be optimized for mobile hardware architectures. This can further improve the performance and efficiency of the model on mobile devices.
 
 ## Results
-- We were able to achieve exceptional results with the Yolov5 model on the SKU110K dataset
+- I was able to achieve exceptional results with the Yolov5 model on the SKU110K dataset
 - But remember the main objective of this project was to quantize the model and deploy it on edge devices for real-time detection in dense environments.
 - The model was quantized into various formats and different precisions and the results were compared to one another on test set.
 
