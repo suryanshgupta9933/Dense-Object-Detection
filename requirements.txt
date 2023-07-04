@@ -2,3 +2,4 @@ pillow
 torch
 opencv-python-headless
 numpy
+streamlit
