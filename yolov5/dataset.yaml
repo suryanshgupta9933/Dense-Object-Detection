@@ -1,7 +1,0 @@
-train: ../SKU110K/train/images
-val: ../SKU110K/val/images
-test: ../SKU110K/test/images
-
-# Classes
-nc: 1
-names: ['object']
