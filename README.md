@@ -1,4 +1,4 @@
-# Yolov5-SKU110K
+# Dense Object Detection
 Object Detection in Dense Environments using Yolov5 by Ultralytics on SKU110K dataset and Post Quantization.
 
 ### The Yolov5 model by Ultralytics is an efficient object detection model that can be quantized and deployed on edge devices for real-time detection in dense environments.
@@ -79,10 +79,6 @@ Theoritically the model should have been quantized to INT8 precision with minima
 
 But, when these models were inferenced and compared to one another the int 8 model performs the best in terms of accuracy.
 Amazing right? :)
-
-## Streamlit App
-- The streamlit app is deployed on streamlit cloud and can be found [here](https://smackiaa-yolov5-sku110k-app-iw8gew.streamlit.app/)
-- The app is a simple web app that can be used to upload images and get predictions from the model.
 
 ## Advantages of using SKU110K dataset on Yolov5 model
 - Large and Diverse: The dataset contains a large and diverse set of product images, covering a wide range of categories, brands, and styles. This diversity can help the YOLOv5 model learn to recognize a variety of products and adapt to different retail store settings.
