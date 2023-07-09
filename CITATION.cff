@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: Dense Object Detection
+message: >-
+  If you use this software in your work, please cite it
+  using the following metadata.
+type: software
+authors:
+  - given-names: Suryansh
+    family-names: Gupta
+    email: suryanshgupta9933@gmail.com
+    orcid: 'https://orcid.org/0009-0005-2610-3053'
+repository-code: >-
+  https://github.com/suryanshgupta9933/Dense-Object-Detection
+keywords:
+  - Object Detection
+  - Yolov5
+  - SKU110K
+license: MIT
+version: latest
