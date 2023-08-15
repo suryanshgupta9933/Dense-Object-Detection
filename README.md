@@ -1,6 +1,16 @@
 # Dense Object Detection
 Object Detection in Dense Environments using Yolov5 by Ultralytics on SKU110K dataset and Post Quantization.
 
+## Table of Contents
+- [Training and Evaluation](#training-and-evaluation)
+- [Quantization and its benefits](#quantization-and-its-benefits)
+- [Results](#results)
+- [Inference](#inference)
+- [Advantages of using SKU110K dataset on Yolov5 model](#advantages-of-using-sku110k-dataset-on-yolov5-model)
+- [Limitations of using SKU110K dataset on Yolov5 model](#limitations-of-using-sku110k-dataset-on-yolov5-model)
+- [Real World Implementations](#real-world-implementations)
+- [To Do](#to-do)
+
 ### The Yolov5 model by Ultralytics is an efficient object detection model that can be quantized and deployed on edge devices for real-time detection in dense environments.
 Some of the key features of Yolov5 are:
 - It is fast (30+ FPS) and accurate.
