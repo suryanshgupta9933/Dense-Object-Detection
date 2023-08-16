@@ -39,10 +39,10 @@ The image size was set to 640x640 and the batch size was set to 2 due to the dat
 The training was done on 2 x 3060 Ti Nvidia GPUs each consisting of 8gb vram for approximately 3 hours.
 
 ### Graphs for training and validation for various metrics.
-<img src="/assets/results.png" width="750" />
+<img src="assets/results.png" width="750" />
 
 ### Confusion Matrix for the validation set.
-<img src="/assets/confusion_matrix.png" width="750" />
+<img src="assets/confusion_matrix.png" width="750" />
 
 ## Quantization and its benefits
 Quantization is a technique to reduce the size of the model by reducing the precision of the weights and activations.
@@ -76,14 +76,14 @@ Some benefits of quantizing yolov5 model are:-
 
 ### Pytorch FP16 | Tflite FP32
 <p float="left">
-  <img src="/assets/pt_img.png" width="412" />
-  <img src="/assets/tflite_fp32.png" width="412" /> 
+  <img src="assets/pt_img.png" width="412" />
+  <img src="assets/tflite_fp32.png" width="412" /> 
 </p>
 
 ### Tflite FP16 | Tflite INT8
 <p float="left">
-  <img src="/assets/tflite_fp16.png" width="412" />
-  <img src="/assets/tflite_int8.png" width="412" />
+  <img src="assets/tflite_fp16.png" width="412" />
+  <img src="assets/tflite_int8.png" width="412" />
 </p>
 
 Theoritically the model should have been quantized to INT8 precision with minimal loss in accuracy and we could see that the model was quantized to INT8 precision with a loss in accuracy of 0.007 which is very minimal and works in our favor.
