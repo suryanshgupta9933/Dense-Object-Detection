@@ -6,6 +6,7 @@ Object Detection in Dense Environments using Yolov5 by Ultralytics on SKU110K da
 - [Quantization and its benefits](#quantization-and-its-benefits)
 - [Results](#results)
 - [Inference](#inference)
+- [Weights](#weights)
 - [Advantages of using SKU110K dataset on Yolov5 model](#advantages-of-using-sku110k-dataset-on-yolov5-model)
 - [Limitations of using SKU110K dataset on Yolov5 model](#limitations-of-using-sku110k-dataset-on-yolov5-model)
 - [Real World Implementations](#real-world-implementations)
@@ -89,6 +90,9 @@ Theoritically the model should have been quantized to INT8 precision with minima
 
 But, when these models were inferenced and compared to one another the int 8 model performs the best in terms of accuracy.
 Amazing right? :)
+
+## Weights
+The weights for the model are removed from the repository due to their large size but can be downloaded from [here](https://drive.google.com/file/d/1BRlXZD9MqYAYYnciMRQ50Mht9kBncf0l/view?usp=sharing).
 
 ## Advantages of using SKU110K dataset on Yolov5 model
 - Large and Diverse: The dataset contains a large and diverse set of product images, covering a wide range of categories, brands, and styles. This diversity can help the YOLOv5 model learn to recognize a variety of products and adapt to different retail store settings.
