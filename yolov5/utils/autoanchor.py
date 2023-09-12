@@ -10,8 +10,8 @@ import torch
 import yaml
 from tqdm import tqdm
 
-from utils import TryExcept
-from utils.general import LOGGER, TQDM_BAR_FORMAT, colorstr
+from yolov5.utils import TryExcept
+from yolov5.utils.general import LOGGER, TQDM_BAR_FORMAT, colorstr
 
 PREFIX = colorstr('AutoAnchor: ')
 
